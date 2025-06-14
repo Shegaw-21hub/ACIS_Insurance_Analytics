@@ -27,11 +27,28 @@ Thumbs.db
 desktop.ini
 
 # Data files
-data/
-*.csv
-*.xlsx
+# Ignore everything in data/...
+data/*
+
+# ...except DVC metadata files
+!data/*.dvc
+
 
 # Logs and outputs
 *.log
 logs/
 outputs/
+
+#*
+!.dvc/
+!.dvc/**
+# Allow DVC tracking files
+!*.dvc
+
+# Ignore everything in data/
+data/*
+
+# But do NOT ignore .dvc files (DVC tracking files)
+!data/*.dvc
+
+
