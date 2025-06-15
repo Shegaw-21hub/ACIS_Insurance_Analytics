@@ -1,0 +1,14 @@
+schema: '2.0'
+stages:
+  preprocess:
+    cmd: python src/scripts.py
+    deps:
+    - path: data/MachineLearningRating_v3.txt
+      hash: md5
+      md5: f6b7009b68ae21372b7deca9307fbb23
+      size: 529363713
+    outs:
+    - path: data/clean.csv
+      hash: md5
+      md5: fb62cb76aaf940df1c369c6ab5b9db75
+      size: 527427659
