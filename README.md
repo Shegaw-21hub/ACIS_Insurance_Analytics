@@ -145,3 +145,104 @@ Establish a reproducible and auditable data pipeline using [Data Version Control
   ```bash
   git clone <repo-url>
   dvc pull
+
+
+# 📈 Insurance Risk Segmentation – Statistical Hypothesis Testing (Task 3)
+
+## 🔍 Objective
+
+This project investigates whether certain customer and regional attributes significantly influence insurance risk. The results will guide strategic segmentation and pricing decisions. Specifically, we test **claim frequency**, **claim severity**, and **margin** across various categorical features to validate or reject key business hypotheses.
+
+---
+
+## 📊 Key Metrics
+
+| Metric             | Definition                                                       |
+|--------------------|------------------------------------------------------------------|
+| **Claim Frequency** | Proportion of policies with at least one claim (`HadClaim`)     |
+| **Claim Severity**  | Average claim amount, conditional on a claim occurring          |
+| **Margin**          | Profit per policy: `Margin = TotalPremium - TotalClaims`        |
+
+---
+
+## 📁 Dataset
+
+The dataset includes anonymized transactional insurance data with 52 features per record, such as:
+
+- **Customer attributes**: Gender, Citizenship, Title, Language  
+- **Policy details**: Premium, Claims, Product Type, Cover Category  
+- **Geographic info**: Province, Zip Code  
+- **Derived columns**: `HadClaim`, `Margin`, `ClaimSeverity`  
+
+---
+
+## 🧪 Hypotheses & Tests Conducted
+
+| Hypothesis No. | Null Hypothesis (H₀)                                                           | Test Used              | Result        |
+|----------------|---------------------------------------------------------------------------------|------------------------|---------------|
+| 1              | There are no risk differences across Provinces                                 | Kruskal-Wallis         | ❌ Rejected    |
+| 2              | There are no risk differences between Zip Codes                                | Kruskal-Wallis         | ❌ Rejected    |
+| 3              | There are no significant **margin** differences between Zip Codes              | Kruskal-Wallis         | ❌ Rejected    |
+| 4              | There are no significant risk differences between Women and Men                | Independent T-Test      | ✅ Retained    |
+
+---
+
+## 📈 Visualizations
+
+Several boxplots and barplots were used to visualize KPI distributions:
+
+- **Margin by Province** – reveals profit differences across regions  
+- **Claim Frequency by Province and Gender**  
+- **Claim Severity by Gender**  
+
+*Visual insights reinforce statistical test results, enabling clear communication with business stakeholders.*
+
+---
+
+## 📌 Statistical Testing Logic
+
+| Variable Type      | Examples                        | Test Used         | Why?                                                                 |
+|--------------------|----------------------------------|-------------------|----------------------------------------------------------------------|
+| Categorical (multi)| Province, Zip Code               | Kruskal-Wallis    | Non-parametric comparison across >2 groups                          |
+| Categorical (binary)| Gender                          | T-Test (on 0/1)   | Comparing mean claim frequency between 2 groups                     |
+| Numerical          | Margin                           | Kruskal-Wallis    | Margin treated as continuous outcome variable                       |
+
+---
+
+## 📢 Key Insights & Business Recommendations
+
+- **Provinces & Zip Codes affect risk** → Regional pricing models are justified.  
+- **Profitability varies by area** → Localized margin analysis supports tailored pricing.  
+- **No evidence of gender bias** → Avoid using gender for underwriting decisions.  
+
+These findings can guide premium adjustments and risk management, helping the business align **pricing strategies with real-world risk patterns**.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Python (Pandas, NumPy, SciPy, Seaborn, Matplotlib)**
+- **Jupyter Notebook**
+- **Git & GitHub for version control**
+
+---
+
+
+---
+
+## 🚀 Git Workflow Summary
+
+- Created branch `task-3` for hypothesis testing
+- Merged prior updates from Task 2
+- Committed with message: `"Implement A/B testing framework in task3_ab__testing.ipynb"`
+- Merged to `main` via pull request
+
+---
+
+## ✅ Final Note
+
+This project combines **data-driven insight**, **statistical rigor**, and **business interpretation** to improve insurance segmentation strategies. Results are production-ready and suitable for direct integration into underwriting models.
+
+> 📌 **Author**: Shegaw Adugna Melaku  
+> 🕓 **Last Updated**: June 2025  
+
