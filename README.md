@@ -105,14 +105,21 @@ This task focuses on establishing a solid foundation for the project by:
 
 
 
-# ✅ Task 2: Reproducible Data Pipeline with DVC
-
+# ✅ Task 2: DVC & Workflow Description
+This project uses DVC for data and pipeline version control.
 ## 📌 Objective
 
 Establish a reproducible and auditable data pipeline using [Data Version Control (DVC)](https://dvc.org/), a standard practice in regulated industries like finance and insurance. The goal is to ensure that datasets used in analysis and modeling are versioned and can be reproduced exactly for auditing, compliance, or collaboration.
 
----
+I created a reproducible DVC pipeline using:
+```bash
+dvc stage add -n preprocess \
+-d src/preprocess.py \
+-d data/insurance_data.csv \
+-o data/processed_data.csv \
+python src/preprocess.py
 
+---
 ## 🛠️ What Was Done
 
 - **Initialized DVC** in the project to enable data tracking and decouple datasets from Git.
