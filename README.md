@@ -118,8 +118,40 @@ dvc stage add -n preprocess \
 -d data/insurance_data.csv \
 -o data/processed_data.csv \
 python src/preprocess.py
+```
 
----
+### Step 2: Remote Storage Configuration
+
+A local DVC remote was added with:
+
+```bash
+mkdir DVCstorage
+dvc remote add -d localstorage ./DVCstorage
+```
+### Step 3: Data Versioning with DVC
+
+To track the dataset with DVC:
+
+```bash
+dvc add data/insurance_data.csv
+git add data/insurance_data.csv.dvc .gitignore
+git commit -m "Track insurance dataset with DVC"
+```
+
+### Step 4: Push to Remote
+
+```bash
+dvc push
+```
+### Step 5: Git + DVC Integration Workflow
+
+I integrate DVC with Git to manage code and data separately but reproducibly:
+
+- `*.csv` files are tracked via DVC.
+- `.dvc` metadata files are versioned via Git.
+- Collaborators clone the repo and run `dvc pull` to get datasets.
+
+
 ## 🛠️ What Was Done
 
 - **Initialized DVC** in the project to enable data tracking and decouple datasets from Git.
@@ -152,6 +184,25 @@ python src/preprocess.py
   ```bash
   git clone <repo-url>
   dvc pull
+  ## 📸 DVC Evidence
+
+Below are screenshots to demonstrate the DVC setup and execution:
+
+### ✅ DVC Init
+![DVC Init](assets/dvc_screenshots/dvc_init.png)
+
+### ✅ DVC Stage Add
+![DVC Stage Add](assets/dvc_screenshots/dvc_stage_add.png)
+
+### ✅ Folder Structure
+![Folder Structure](assets/dvc_screenshots/folder_structure.png)
+
+### ✅ DVC Repro
+![DVC Repro](assets/dvc_screenshots/dvc_repro.png)
+
+### ✅ DVC Push (Optional)
+![DVC Push](assets/dvc_screenshots/dvc_push.png)
+
 
 
 # 📈 Insurance Risk Segmentation – Statistical Hypothesis Testing (Task 3)
