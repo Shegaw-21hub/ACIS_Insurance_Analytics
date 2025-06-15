@@ -191,17 +191,10 @@ Below are screenshots to demonstrate the DVC setup and execution:
 ### ✅ DVC Init
 ![DVC Init](assets/dvc_screenshots/dvc_init.png)
 
-### ✅ DVC Stage Add
+![DVC Init](assets/dvc_screenshots/dvc_init.png)
 ![DVC Stage Add](assets/dvc_screenshots/dvc_stage_add.png)
-
-### ✅ Folder Structure
+![DVC Stage Add 1](assets/dvc_screenshots/dvc_stage_add1.png)
 ![Folder Structure](assets/dvc_screenshots/folder_structure.png)
-
-### ✅ DVC Repro
-![DVC Repro](assets/dvc_screenshots/dvc_repro.png)
-
-### ✅ DVC Push (Optional)
-![DVC Push](assets/dvc_screenshots/dvc_push.png)
 
 
 
