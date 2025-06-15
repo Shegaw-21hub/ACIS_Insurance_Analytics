@@ -189,13 +189,13 @@ I integrate DVC with Git to manage code and data separately but reproducibly:
 Below are screenshots to demonstrate the DVC setup and execution:
 
 ### ✅ DVC Init
-![DVC Init](assets/dvc_screenshots/dvc_init.png)
+```![DVC Init](assets/dvc_screenshots/dvc_init.png)
 
 ![DVC Init](assets/dvc_screenshots/dvc_init.png)
 ![DVC Stage Add](assets/dvc_screenshots/dvc_stage_add.png)
 ![DVC Stage Add 1](assets/dvc_screenshots/dvc_stage_add1.png)
 ![Folder Structure](assets/dvc_screenshots/folder_structure.png)
-
+```
 
 
 # 📈 Insurance Risk Segmentation – Statistical Hypothesis Testing (Task 3)
