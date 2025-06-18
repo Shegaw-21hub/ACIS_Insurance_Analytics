@@ -289,6 +289,67 @@ These findings can guide premium adjustments and risk management, helping the bu
 - Merged to `main` via pull request
 
 ---
+# Task 4: Risk-Based Pricing System — Claim Severity & Premium Modeling
+
+## 📌 Project Objective
+
+The goal of this task is to build a dynamic, risk-based pricing system by developing machine learning models that predict:
+
+1. **Claim Severity** (`TotalClaims`) — Estimate financial liability for policies with claims.
+2. **Premium Optimization** — Develop a pricing framework that balances risk, expenses, and profit margins.
+
+---
+
+## ⚙️ Workflow Overview
+
+### 1. Data Preparation
+- Missing value imputation
+- Feature engineering (e.g., vehicle age, regional indicators)
+- One-hot encoding for categorical variables
+- Train-test split (80/20)
+
+### 2. Modeling Approaches
+Implemented and evaluated:
+- Linear Regression
+- Random Forest Regressor
+- XGBoost Regressor
+
+### 3. Model Evaluation
+**Metrics used:**
+- RMSE (Root Mean Squared Error)
+- R² Score
+
+Best model selected based on highest R² and lowest RMSE on the test set.
+
+### 4. Model Interpretability
+Used **SHAP (SHapley Additive Explanations)** to:
+- Identify top 10 influential features
+- Generate feature importance bar plots
+- Provide actionable business insights
+
+---
+
+## 🔍 Claim Severity Model
+
+- **Target:** `TotalClaims` (only for policies with claims > 0)
+- **Problem Type:** Regression
+- **Business Use:** Estimate expected cost of claims for more accurate premium pricing
+
+---
+
+## 🧮 Risk-Based Premium Framework (Advanced)
+
+To optimize pricing:
+Premium = (Probability of Claim × Predicted Claim Severity)
++ Expenses + Profit Margin
+
+
+- **Probability of Claim:** From a classification model (not yet implemented)
+- **Claim Severity:** Predicted using regression (this task)
+- **Expenses & Profit Margin:** Business-defined constants
+
+> This formula ensures that higher-risk customers are charged appropriately while maintaining profitability.
+
 
 ## ✅ Final Note
 
